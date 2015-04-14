@@ -8,6 +8,20 @@ authors = ["Simon Wollwage"]
 getopts = "*"
 log = "*"
 
+[profile.dev]
+opt-level = 0
+debug = true  
+rpath = false
+lto = true   
+debug-assertions = true 
+
+[profile.test]
+opt-level = 0
+debug = true  
+rpath = false
+lto = true   
+debug-assertions = true 
+
 [lib]
 name = "argon"
 path = "src/argon.rs"
