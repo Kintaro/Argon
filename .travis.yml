@@ -10,4 +10,5 @@ after_success: |
   make &&
   sudo make install &&
   cd ../.. &&
+  echo $TRAVIS_JOB_ID &&
   kcov --exclude-pattern=/.cargo --coveralls-id=$TRAVIS_JOB_ID target/kcov target/debug/lib-*;
