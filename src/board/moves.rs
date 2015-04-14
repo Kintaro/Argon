@@ -21,11 +21,11 @@ impl Move {
     }
 
     /// Retrieves the move's color
-    pub fn color(&self) -> &StoneColor {
+    pub fn color(&self) -> StoneColor {
         match self {
-            &Move::Play(_, ref color) => color,
-            &Move::Pass(ref color)    => color,
-            &Move::Resign(ref color)  => color
+            &Move::Play(_, ref color) => color.clone(),
+            &Move::Pass(ref color)    => color.clone(),
+            &Move::Resign(ref color)  => color.clone()
         }
     }
 
