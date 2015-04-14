@@ -13,3 +13,9 @@ fn position_fail() {
     let m = Move::Pass(StoneColor::White);
     assert!(m.position().is_none());
 }
+
+#[test]
+fn color() {
+    let m = Move::Pass(StoneColor::White);
+    assert!(m.color() == StoneColor::White);
+}
