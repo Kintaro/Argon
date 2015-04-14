@@ -1,0 +1,17 @@
+[project]
+
+name = "argon"
+version = "0.0.1"
+authors = ["Simon Wollwage"]
+
+[dependencies]
+getopts = "*"
+log = "*"
+
+[lib]
+name = "argon"
+path = "src/argon.rs"
+
+[[bin]]
+name = "argon"
+path = "src/argon.rs"
