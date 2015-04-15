@@ -21,11 +21,3 @@ debug = true
 rpath = false
 lto = true   
 debug-assertions = true 
-
-[lib]
-name = "argon"
-path = "src/argon.rs"
-
-[[bin]]
-name = "argon"
-path = "src/argon.rs"

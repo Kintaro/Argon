@@ -29,6 +29,7 @@ impl Move {
         }
     }
 
+    /// Checks if the move is a playing move.
     pub fn is_play(&self) -> bool {
         match self {
             &Move::Play(_, _) => true,
@@ -36,6 +37,7 @@ impl Move {
         }
     }
 
+    /// Checks if the move is a passing move
     pub fn is_pass(&self) -> bool {
         match self {
             &Move::Pass(_) => true,
@@ -43,6 +45,7 @@ impl Move {
         }
     }
 
+    /// Checks if the move is a resignation move
     pub fn is_resign(&self) -> bool {
         match self {
             &Move::Resign(_) => true,
