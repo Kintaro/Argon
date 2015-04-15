@@ -16,6 +16,35 @@ fn position_fail() {
 
 #[test]
 fn color() {
-    let m = Move::Pass(StoneColor::White);
-    assert!(m.color() == StoneColor::White);
+    let m1 = Move::Pass(StoneColor::White);
+    let m2 = Move::Pass(StoneColor::Black);
+    assert!(m1.color() == StoneColor::White);
+    assert!(m2.color() == StoneColor::Black);
+}
+
+#[test]
+fn is_play() {
+    let m1 = Move::Play(Position::new(3, 3), StoneColor::White);
+    let m2 = Move::Pass(StoneColor::Black);
+
+    assert!(m1.is_play());
+    assert!(!m2.is_play());
+}
+
+#[test]
+fn is_pass() {
+    let m1 = Move::Play(Position::new(3, 3), StoneColor::White);
+    let m2 = Move::Pass(StoneColor::Black);
+
+    assert!(!m1.is_pass());
+    assert!(m2.is_pass());
+}
+
+#[test]
+fn is_resign() {
+    let m1 = Move::Resign(StoneColor::White);
+    let m2 = Move::Pass(StoneColor::Black);
+
+    assert!(m1.is_resign());
+    assert!(!m2.is_play());
 }
