@@ -17,7 +17,7 @@ impl Position {
     /// Generate all positions on the board
     /// (excluding the border)
     pub fn generate_positions(board_size: u8) -> Vec<Position> {
-        (0us..(board_size as usize * board_size as usize))
+        (0usize..(board_size as usize * board_size as usize))
             .map(|index| Position::from_linear_index(board_size, index))
             .collect()
     }
@@ -26,7 +26,7 @@ impl Position {
     /// the point to [size * row + column]
     pub fn from_linear_index(board_size: u8, index: usize) -> Position {
         Position::new((index / board_size as usize + 1) as u8,
-            (index % board_size as usize + 1) as u8) 
+            (index % board_size as usize + 1) as u8)
     }
 
     /// Maps the position back to its linear index
